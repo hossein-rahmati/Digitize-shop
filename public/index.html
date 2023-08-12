@@ -143,17 +143,19 @@
 
     <!-- body -->
     <div
-      class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-5 container m-auto px-2"
+      class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-5 container m-auto px-2 mb-20"
     >
       <!-- sidebar -->
       <div class="hidden md:block col-span-4 lg:col-span-3 row-span-2">
-        <div class="bg-white p-6 rounded-3xl mb-4">
+        <div
+          class="bg-white p-6 rounded-3xl mb-4 overflow-auto max-h-[calc(100vh_-_140px)]"
+        >
           <!-- categories -->
           <div class="mb-7 border-b pb-4">
             <div class="text-xl font-bold text-orange-600 mb-5">دسته بندی</div>
             <ul class="flex flex-col gap-6">
               <li
-                class="flex items-center text-slate-800 hover:bg-gray-50 p-2 rounded-md cursor-pointer"
+                class="flex items-center text-gray-400 hover:bg-gray-50 p-2 rounded-md cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -209,7 +211,7 @@
                 <span class="mr-4 text-lg">لپ تاپ</span>
               </li>
               <li
-                class="flex items-center text-gray-400 hover:bg-gray-50 p-2 rounded-md cursor-pointer"
+                class="flex items-center text-slate-800 hover:bg-gray-50 p-2 rounded-md cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -307,7 +309,10 @@
                 x-show="isOpenBrand===true"
                 class="flex flex-col gap-3 px-4 text-lg"
               >
-                <label for="apple" class="py-2 flex items-center gap-2">
+                <label
+                  for="apple"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="apple"
@@ -317,7 +322,10 @@
                   />
                   <span>اپل</span>
                 </label>
-                <label for="samsung" class="py-2 flex items-center gap-2">
+                <label
+                  for="samsung"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="samsung"
@@ -326,7 +334,10 @@
                   />
                   <span>سامسونگ</span>
                 </label>
-                <label for="xiaomi" class="py-2 flex items-center gap-2">
+                <label
+                  for="xiaomi"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="xiaomi"
@@ -335,7 +346,10 @@
                   />
                   <span>شیائومی</span>
                 </label>
-                <label for="huawei" class="py-2 flex items-center gap-2">
+                <label
+                  for="huawei"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="huawei"
@@ -413,7 +427,10 @@
                 x-show="isOpenBrand===true"
                 class="flex flex-col gap-3 px-4 text-lg"
               >
-                <label for="red" class="py-2 flex items-center gap-2">
+                <label
+                  for="red"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="red"
@@ -422,7 +439,10 @@
                   />
                   <span>قرمز</span>
                 </label>
-                <label for="blue" class="py-2 flex items-center gap-2">
+                <label
+                  for="blue"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="blue"
@@ -431,7 +451,10 @@
                   />
                   <span>آبی</span>
                 </label>
-                <label for="yellow" class="py-2 flex items-center gap-2">
+                <label
+                  for="yellow"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="yellow"
@@ -440,7 +463,10 @@
                   />
                   <span>زرد</span>
                 </label>
-                <label for="green" class="py-2 flex items-center gap-2">
+                <label
+                  for="green"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="green"
@@ -449,7 +475,10 @@
                   />
                   <span>سبز</span>
                 </label>
-                <label for="purple" class="py-2 flex items-center gap-2">
+                <label
+                  for="purple"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="purple"
@@ -458,7 +487,10 @@
                   />
                   <span>بنفش</span>
                 </label>
-                <label for="pink" class="py-2 flex items-center gap-2">
+                <label
+                  for="pink"
+                  class="py-2 flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     id="pink"
@@ -734,6 +766,157 @@
       </div>
     </div>
 
+    <!-- bottom navbar mobile section -->
+    <div
+      class="md:hidden fixed bottom-0 bg-white w-full p-1 rounded-t-md shadow-[0_-4px_8px_0_rgba(0,0,0,0.1)]"
+    >
+      <nav>
+        <ul
+          x-data="{activeBottomNav: 1, activeTabClass: 'text-[#343E66] font-bold'}"
+          class="flex items-center justify-evenly text-sm text-slate-400"
+        >
+          <a href="#">
+            <li
+              :class="activeBottomNav=== 1 ? activeTabClass : ''"
+              @click="activeBottomNav= 1"
+              class="flex items-center gap-1 py-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="34"
+                height="34"
+                fill="currentColor"
+              >
+                <path
+                  d="M26.72 9.094 19.04 3.72c-2.093-1.466-5.307-1.386-7.32.174L5.04 9.107c-1.333 1.04-2.387 3.173-2.387 4.853v9.2c0 3.4 2.76 6.174 6.16 6.174h14.374c3.4 0 6.16-2.76 6.16-6.16v-9.04c0-1.8-1.16-4.014-2.627-5.04ZM17 24c0 .547-.453 1-1 1-.547 0-1-.453-1-1v-4c0-.546.453-1 1-1 .547 0 1 .454 1 1v4Z"
+                />
+              </svg>
+              <span x-show="activeBottomNav===1">خانه</span>
+            </li>
+          </a>
+          <a href="#">
+            <li
+              :class="activeBottomNav=== 2 ? activeTabClass : ''"
+              @click="activeBottomNav= 2"
+              class="flex items-center gap-1 py-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="34"
+                height="34"
+                fill="currentColor"
+              >
+                <g>
+                  <path
+                    d="M10.257 2.833H7.565c-3.102 0-4.732 1.63-4.732 4.718v2.692c0 3.088 1.63 4.717 4.718 4.717h2.692c3.088 0 4.717-1.629 4.717-4.717V7.55c.014-3.088-1.615-4.718-4.703-4.718ZM26.45 2.833h-2.692c-3.089 0-4.718 1.63-4.718 4.718v2.692c0 3.088 1.63 4.717 4.718 4.717h2.691c3.088 0 4.718-1.629 4.718-4.717V7.55c0-3.088-1.63-4.718-4.718-4.718ZM26.45 19.026h-2.692c-3.089 0-4.718 1.629-4.718 4.717v2.692c0 3.088 1.63 4.718 4.718 4.718h2.691c3.088 0 4.718-1.63 4.718-4.718v-2.692c0-3.088-1.63-4.717-4.718-4.717ZM10.257 19.026H7.565c-3.102 0-4.732 1.629-4.732 4.717v2.692c0 3.103 1.63 4.732 4.718 4.732h2.692c3.088 0 4.717-1.63 4.717-4.718v-2.692c.014-3.102-1.615-4.731-4.703-4.731Z"
+                  />
+                </g>
+              </svg>
+              <span x-show="activeBottomNav===2">دسته بندی</span>
+            </li>
+          </a>
+          <a href="#">
+            <li
+              :class="activeBottomNav=== 3 ? activeTabClass : ''"
+              @click="activeBottomNav= 3"
+              class="flex items-center gap-1 py-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="34"
+                height="34"
+                fill="currentColor"
+              >
+                <path
+                  d="M28.277 12.693c-.95-1.048-2.38-1.657-4.364-1.87V9.747a6.9 6.9 0 0 0-2.266-5.114c-1.46-1.332-3.358-1.955-5.327-1.771-3.386.326-6.233 3.598-6.233 7.14v.821c-1.984.213-3.415.822-4.364 1.87-1.374 1.53-1.331 3.57-1.176 4.987l.992 7.89c.298 2.763 1.417 5.597 7.508 5.597h7.905c6.092 0 7.211-2.834 7.509-5.582l.992-7.92c.155-1.402.184-3.442-1.176-4.972ZM16.518 4.831c1.417-.128 2.763.312 3.811 1.26a4.925 4.925 0 0 1 1.615 3.656v.991h-9.888v-.736c0-2.522 2.082-4.944 4.462-5.171Zm-4.59 13.798h-.014a1.42 1.42 0 0 1-1.416-1.416 1.424 1.424 0 0 1 2.848 0 1.42 1.42 0 0 1-1.418 1.416Zm9.917 0h-.014a1.42 1.42 0 0 1-1.417-1.416 1.424 1.424 0 0 1 2.848 0 1.42 1.42 0 0 1-1.417 1.416Z"
+                />
+              </svg>
+              <span x-show="activeBottomNav===3">سبد خرید</span>
+            </li>
+          </a>
+          <a href="#">
+            <li
+              :class="activeBottomNav=== 4 ? activeTabClass : ''"
+              @click="activeBottomNav= 4"
+              class="flex items-center gap-1 py-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="32"
+                height="32"
+              >
+                <path
+                  d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
+                />
+              </svg>
+              <span x-show="activeBottomNav===4">علاقه مندی</span>
+            </li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+
     <!-- footer -->
+    <footer
+      class="hidden md:block bg-white py-6 text-lg lg:text-xl xl:text-3xl"
+    >
+      <div class="container m-auto md:flex items-center gap-10">
+        <div class="w-2/4 leading-loose">
+          دیجی تایز عرضه کننده جدیدترین محصولات الکترونیک نظیر لپ تاپ، گوشی
+          هوشمند و ساعت هوشمند میباشد.<br />
+          دیجی تایز افتخار این را داشته که به
+          <span class="text-orange-600">۲۳۲,۱۲۲ نفر</span> تا به کنون خدمت رسانی
+          داشته باشد.
+        </div>
+        <div class="w-1/4 flex flex-col gap-7">
+          <a href="#" class="font-bold">محصولات</a>
+          <a href="#">تلفن همراه</a>
+          <a href="#">لپ تاپ</a>
+          <a href="#">ساعت هوشمند</a>
+        </div>
+        <div class="w-1/4 flex flex-col justify-start gap-2">
+          <img
+            class="cursor-pointer"
+            src="/assets/images/footer-map.svg"
+            alt="map-image"
+          />
+          <a href="#" class="flex justify-end gap-2 ml-4">
+            <span>۰۲۱-۱۲۳۴۵۶</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="flex justify-end gap-2 ml-4">
+            <span>info@digitize.com</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
