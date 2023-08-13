@@ -1,11 +1,11 @@
 
 Digitize Shopping
 
-Digitize shopping is an static webpage and is developed in order to look around and buy digital devices.
+Digitize shopping is a static webpage developed to look around and buy digital devices.
 
-I used Tailwind.css framework due to its high-speed CSS classes and mobile-first approach
+I used the Tailwind.css framework due to its high-speed CSS classes and mobile-first approach and I also used Alpine.js for toggles and dropdowns
 
-The most challenge was about untidy HTML & CSS tags and I hope to refactor website with React.JS library in future
+The biggest challenge was about untidy HTML & CSS tags and I hope to refactor the website with the React.JS library in future
 
 ## Features
 
@@ -16,7 +16,7 @@ The most challenge was about untidy HTML & CSS tags and I hope to refactor websi
 
 ## Installation
 
-Please install required files with npm before run
+Please install the quired files with npm before the run
 ```bash
   npm install
 ```
